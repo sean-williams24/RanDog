@@ -12,6 +12,8 @@
 		CE1208F122F0399200E969F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1208EF22F0399200E969F7 /* Main.storyboard */; };
 		CE1208F322F0399400E969F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1208F222F0399400E969F7 /* Assets.xcassets */; };
 		CE1208F622F0399400E969F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1208F422F0399400E969F7 /* LaunchScreen.storyboard */; };
+		CE12090122F03B8200E969F7 /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12090022F03B8200E969F7 /* DogAPI.swift */; };
+		CE12090322F06D2E00E969F7 /* DogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE12090222F06D2E00E969F7 /* DogImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		CE1208F222F0399400E969F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1208F522F0399400E969F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1208F722F0399400E969F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE12090022F03B8200E969F7 /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
+		CE12090222F06D2E00E969F7 /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,40 @@
 		CE1208EA22F0399200E969F7 /* RanDog */ = {
 			isa = PBXGroup;
 			children = (
-				CE1208EB22F0399200E969F7 /* AppDelegate.swift */,
-				CE1208ED22F0399200E969F7 /* ViewController.swift */,
-				CE1208EF22F0399200E969F7 /* Main.storyboard */,
-				CE1208F222F0399400E969F7 /* Assets.xcassets */,
-				CE1208F422F0399400E969F7 /* LaunchScreen.storyboard */,
+				CE1208FF22F03B5D00E969F7 /* Model */,
+				CE1208FE22F039CA00E969F7 /* Controller */,
+				CE1208FD22F039B300E969F7 /* View */,
 				CE1208F722F0399400E969F7 /* Info.plist */,
 			);
 			path = RanDog;
+			sourceTree = "<group>";
+		};
+		CE1208FD22F039B300E969F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE1208EF22F0399200E969F7 /* Main.storyboard */,
+				CE1208F222F0399400E969F7 /* Assets.xcassets */,
+				CE1208F422F0399400E969F7 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE1208FE22F039CA00E969F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE1208EB22F0399200E969F7 /* AppDelegate.swift */,
+				CE1208ED22F0399200E969F7 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE1208FF22F03B5D00E969F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE12090022F03B8200E969F7 /* DogAPI.swift */,
+				CE12090222F06D2E00E969F7 /* DogImage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +167,8 @@
 			files = (
 				CE1208EE22F0399200E969F7 /* ViewController.swift in Sources */,
 				CE1208EC22F0399200E969F7 /* AppDelegate.swift in Sources */,
+				CE12090322F06D2E00E969F7 /* DogImage.swift in Sources */,
+				CE12090122F03B8200E969F7 /* DogAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
