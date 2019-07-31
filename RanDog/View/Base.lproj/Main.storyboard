@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,24 +15,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RanDog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-DB-hiH">
-                                <rect key="frame" x="16" y="20" width="343" height="627"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Acp-ce-NUU">
+                                <rect key="frame" x="16" y="20" width="382" height="696"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBi-69-Lpz">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="285"/>
+                                    </pickerView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9M-DB-hiH">
+                                        <rect key="frame" x="0.0" y="285" width="382" height="411"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="411" id="IPi-36-B51"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d9M-DB-hiH" secondAttribute="trailing" constant="16" id="DTj-Bb-Htu"/>
-                            <constraint firstItem="d9M-DB-hiH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UbJ-CZ-WMS"/>
-                            <constraint firstItem="d9M-DB-hiH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rrw-bY-0Zy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d9M-DB-hiH" secondAttribute="bottom" constant="20" id="u1y-pE-vA4"/>
+                            <constraint firstItem="Acp-ce-NUU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2hr-p4-xHh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Acp-ce-NUU" secondAttribute="trailing" constant="16" id="C5i-Xj-k33"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Acp-ce-NUU" secondAttribute="bottom" constant="20" id="GMO-Qi-E1z"/>
+                            <constraint firstItem="Acp-ce-NUU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qaw-Lu-UUF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="d9M-DB-hiH" id="VFA-xv-GJ8"/>
+                        <outlet property="pickerView" destination="cBi-69-Lpz" id="7Yv-Wv-1vI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

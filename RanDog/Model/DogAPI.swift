@@ -18,6 +18,7 @@ class DogAPI {
         }
     }
     
+    
     // If the data request is successful the DogImage will be returned by complettion handler, if not the error will be.
     class func requestRandomImage(completionHandler: @escaping (DogImage?, Error?) -> Void ) {
         let randomImageEndpoint =  DogAPI.Endpoint.randomImageFromAllDogsCollection.url
