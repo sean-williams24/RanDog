@@ -13,14 +13,25 @@ class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var pickerView: UIPickerView!
     
-    let breeds: [String] = ["GreyHound", "Sausage Dog", "Shiba Inu"]
-    
+    var breedsArray: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pickerView.dataSource = self
         pickerView.delegate = self
         
+        DogAPI.requestBreedsList(completionHandler: handleRequestBreedsListResponse(breeds:error:))
+        
+    }
+    
+    func handleRequestBreedsListResponse(breeds: [String], error: Error?) {
+       
+        breedsArray = breeds.sorted()
+        
+        DispatchQueue.main.async {
+            self.pickerView.reloadAllComponents()
+        }
     }
     
     func handleRandomImageResponse(imageData: DogImage?, error: Error?) {
@@ -42,16 +53,16 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return breeds.count
+        return breedsArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return breeds[row]
+        return breedsArray[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        DogAPI.requestRandomImage(completionHandler: self.handleRandomImageResponse(imageData:error:))
+        DogAPI.requestRandomImage(breed: breedsArray[row], completionHandler: self.handleRandomImageResponse(imageData:error:))
     }
 }
 
